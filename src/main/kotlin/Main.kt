@@ -87,3 +87,8 @@ fun calculate(firstNumber: Double , secondNumber: Double, operation: String): Do
 		}
 	}
 }
+
+// for testing purposes
+//fun exitProcess1(status: Int): Nothing {
+	//throw IllegalStateException("Exiting Program")
+//}
