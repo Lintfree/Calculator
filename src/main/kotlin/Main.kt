@@ -34,6 +34,7 @@ fun showChoices() {
 	println("Division ( / )")
 	println("Modulus ( % )")
 	println("Power ( ^ )")
+	println("Logarithm ( log )")
 	println("Square Root ( sqrt )")
 	println("Sine ( sin )")
 	println("Cosine ( cos )")
@@ -52,10 +53,10 @@ fun readDoubleInput(prompt: String): Double {
 }
 
 fun getArithmeticOperation(): String {
-	print("\n Enter an arithmetic operation: (+, -, *, /, %, ^, sqrt, sin, cos, tan): ")
+	print("\n Enter an arithmetic operation: (+, -, *, /, %, ^, log, sqrt, sin, cos, tan): ")
 	val operation = readLine()
 	return when (operation) {
-		"+", "-", "*", "/", "%", "^", "sqrt", "sin", "cos", "tan" -> operation
+		"+", "-", "*", "/", "%", "^","log", "sqrt", "sin", "cos", "tan" -> operation
 		else -> {
 			println("Invalid operation: Exiting program")
 			exitProcess(2)
@@ -77,6 +78,7 @@ fun calculate(firstNumber: Double , secondNumber: Double, operation: String): Do
 			exitProcess(3)
 			}
 		"^" -> firstNumber.pow(secondNumber)
+		"log" -> kotlin.math.log(firstNumber, secondNumber)
 		"sqrt" -> kotlin.math.sqrt(firstNumber)
 		"sin" -> kotlin.math.sin(firstNumber)
 		"cos" -> kotlin.math.cos(firstNumber)
